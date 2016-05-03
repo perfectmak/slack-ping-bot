@@ -1,0 +1,34 @@
+{
+  "name": "ping-bot",
+  "version": "1.0.0",
+  "description": "A bot to remotely ping a server",
+  "main": "app.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfectmak/slack-ping-bot.git"
+  },
+  "keywords": [
+    "slack",
+    "bot",
+    "ping",
+    "robot"
+  ],
+  "author": "Perfect Makanju",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perfectmak/slack-ping-bot/issues"
+  },
+  "homepage": "https://github.com/perfectmak/slack-ping-bot#readme",
+  "dependencies": {
+    "botkit": "^0.1.1",
+    "dotenv": "^2.0.0",
+    "ping-stats": "^1.0.3" 
+  },
+  "devDependencies": {
+	"tape": "^4.5.1"
+  }
+}

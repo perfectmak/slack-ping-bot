@@ -1,0 +1,5 @@
+# prevent .env file from being monitored
+.env
+
+# node js prevention
+node_modules
