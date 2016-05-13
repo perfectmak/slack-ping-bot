@@ -13,32 +13,18 @@ const beepboop = BeepBoop.start(controller, {
 	debug: true
 });
 
-// controller.spawn({
-// 	  token: process.env.SLACK_TOKEN
-// }).startRTM((err, bot, payload) => {
-// 	if (err) {
-// 	    throw new Error('Could not connect to Slack');
-// 	}
-// });
-
+// say hi when joining a channel
 controller.on('bot_channel_join', (bot, message) => {
   bot.reply(message, 'I\'m here!')
 });
 
+// handle when a direct message is sent
 controller.on(['direct_message', 'direct_mention'], (bot, message) => {
 	console.log(message);
 	
 	pingBot(message.text, (response) => {
 		bot.reply(message, response);
 	});
-});
-
-// after teams have been added
-beepboop.on('add_resource', (message) => {
-  Object.keys(beepboop.workers).forEach((id) => {
-    // this is an instance of a botkit worker
-    var bot = beepboop.workers[id]
-  })
 });
 
 // Send the user who added the bot to their team a welcome message the first time it's connected
