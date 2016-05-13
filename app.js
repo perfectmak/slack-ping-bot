@@ -29,16 +29,17 @@ controller.on(['direct_message', 'direct_mention'], (bot, message) => {
 
 // Send the user who added the bot to their team a welcome message the first time it's connected
 beepboop.on('botkit.rtm.started', (bot, resource, meta) => {
-  const slackUserId = resource.SlackUserID
+  const slackUserId = resource.SlackUserID;
 
   if (meta.isNew && slackUserId) {
     bot.api.im.open({ user: slackUserId }, (err, response) => {
       if (err) {
-        return console.log(err)
+        return console.log(err);
       }
-      const dmChannel = response.channel.id
-      bot.say({channel: dmChannel, text: 'Thanks for adding me to your team!'})
-      bot.say({channel: dmChannel, text: 'Just /invite me to a channel!'})
+      const dmChannel = response.channel.id;
+      bot.say({channel: dmChannel, text: 'Thanks for adding me to your team!'});
+      bot.say({channel: dmChannel, text: 'Just /invite me to a channel!'});
+      bot.say({channel: dmChannel, text: 'To Learn how to use me, you can ask me \'help\' and I\'ll give you more info. :simple_smile:'})
     })
   }
 })
