@@ -1,6 +1,8 @@
 "use strict"
+const fs = require('fs');
 
-require('dotenv').load();
+if(fs.statSync('.env'))
+	require('dotenv').load();
 
 const pingBot = require('./ping-bot');
 
@@ -8,7 +10,9 @@ const BeepBoop = require('beepboop-botkit');
 const Botkit = require('botkit');
 
 const controller = Botkit.slackbot();
-const beepboop = BeepBoop.start(controller);
+const beepboop = BeepBoop.start(controller, {
+	debug: true
+});
 
 // controller.spawn({
 // 	  token: process.env.SLACK_TOKEN
@@ -17,6 +21,10 @@ const beepboop = BeepBoop.start(controller);
 // 	    throw new Error('Could not connect to Slack');
 // 	}
 // });
+
+controller.on('bot_channel_join', (bot, message) => {
+  bot.reply(message, 'I\'m here!')
+});
 
 controller.on(['direct_message', 'direct_mention'], (bot, message) => {
 	console.log(message);
