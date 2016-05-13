@@ -1,8 +1,7 @@
 "use strict"
-const fs = require('fs');
 
-if(fs.statSync('.env'))
-	require('dotenv').load();
+// load local environment variable if any
+require('dotenv').load();
 
 const pingBot = require('./ping-bot');
 
