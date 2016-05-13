@@ -24,11 +24,12 @@
   },
   "homepage": "https://github.com/perfectmak/slack-ping-bot#readme",
   "dependencies": {
+    "beepboop-botkit": "^1.4.0",
     "botkit": "^0.1.1",
     "dotenv": "^2.0.0",
-    "ping-stats": "^1.0.3" 
+    "ping-stats": "^1.0.3"
   },
   "devDependencies": {
-	"tape": "^4.5.1"
+    "tape": "^4.5.1"
   }
 }

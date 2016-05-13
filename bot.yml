@@ -1,5 +1,5 @@
 name: slack-ping-bot
-description: A simple node.js starter bot for Beep Boop
+description: Ping domain names and IP Address from inside your slack.
 avatar: ping-logo.png
 #background: resources/background.png
 ##config:
