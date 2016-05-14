@@ -1,10 +1,9 @@
 name: slack-ping-bot
 description: |
   Ping domain names and IP Address from inside your slack.
-  \n
-  \nUsage Instructions
-  \nAfter installing this app on your slack team, you will notice a new bot user on the team `@ping`
-  \nYou can interact with this new bot user for him to do your bidding. Of course all he does is say hi and ping addresses for you.
+  
+  After installing this app on your slack team, you will notice a new bot user on the team `@ping`.
+  You can interact with this new bot user for him to do your bidding. Of course all he does is say hi and ping addresses for you.
 avatar: ping-logo.png
 slackscopes:
   - bot
